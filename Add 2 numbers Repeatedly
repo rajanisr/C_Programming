@@ -3,7 +3,6 @@
   use of break and continue statements, accepting cjaracter input from the user.*/
   
   #include <stdio.h>
-  #include <stdlib.h>
   
   int main()
   {
@@ -20,11 +19,10 @@
        sum = num1+num2;
        printf("The result of (%f + %f) is %f \n",num1,num2,sum);
        
-       fflush(stdin); 
        printf ("Would you like continue adding?[y/n]\n");
-       scanf ("%c",&choice);
+       scanf (" %c",&choice);
        
-       if(choice =="y")
+       if(choice =='y' || choice == 'Y')
          continue;
        else
         break;
