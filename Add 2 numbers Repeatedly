@@ -2,6 +2,9 @@
   Illustrates use of while loop, decision making using if..else statement,
   use of break and continue statements, accepting cjaracter input from the user.*/
   
+  #include <stdio.h>
+  #include <stdlib.h>
+  
   int main()
   {
      float num1,num2,sum;
