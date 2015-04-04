@@ -1,0 +1,13 @@
+/* C program to take an integer input from the user and 
+ print it on the console. */
+ 
+ #include <stdio.h>
+ 
+ int main()
+ {
+   int a ;
+   printf("Enter an integer :\n");
+   scanf("%d",&a);
+   printf("\nThe entered integer is :\n",a);
+   return 0;
+   }
