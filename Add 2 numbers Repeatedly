@@ -1,0 +1,34 @@
+/*  C program to add 2 numbers repeatedly.
+  Illustrates use of while loop, decision making using if..else statement,
+  use of break and continue statements, accepting cjaracter input from the user.*/
+  
+  int main()
+  {
+     float num1,num2,sum;
+     char choice;
+     
+     printf("Adding two number repeatedly...\n");
+     
+     while(1)
+     {
+       printf("Enter two numbers you would like to add:\n");
+       scanf("%f %f",&num1,&num2);
+       
+       sum = num1+num2;
+       printf("The result of (%f + %f) is %f \n",num1,num2,sum);
+       
+       fflush(stdin); 
+       printf ("Would you like continue adding?[y/n]\n");
+       scanf ("%c",&choice);
+       
+       if(choice =="y")
+         continue;
+       else
+        break;
+     }
+        return 0;
+  }
+       
+       
+       
+    
