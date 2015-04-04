@@ -1,0 +1,46 @@
+/* C program to add 2 numbers using add function.
+   Illustrates use of functions, pass by reference, pass by value.*/
+   
+   #include <stdio.h>
+   
+   float sum;
+   float add_value (float , float );
+   float * add_ref (float *, float *);
+   
+   int main()
+   {
+     float num1, num2;
+     
+     float * pn1, *pn2,*ps;
+     
+     printf("Adding two numbers...\n");
+     scanf("%f %f", &num1, &num2);
+     
+     sum = add_value(num1,num2);
+     
+     printf("Value after passing arguments by value : %f\n", sum);
+     
+     pn1 = &num1;
+     pn2 = &num2;
+     
+     ps = add_ref(pn1,pn2);
+     
+     printf("Value after passing arguments by reference : %f\n", *ps);
+     return 0;
+     }
+     
+     float add_value (float x, float y )
+     { 
+          return (x+y);         
+     }
+    
+    float * add_ref (float *x, float *y)
+    {
+          
+           sum = *x + *y;
+           return &sum;
+           
+    }  
+     
+     
+    
