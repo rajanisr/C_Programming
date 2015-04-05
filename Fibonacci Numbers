@@ -1,0 +1,30 @@
+/* C program to generate fibonacci numbers */
+
+#includ e<stdio.h>
+
+int main()
+{
+  int n;
+  int count =2, a =0,b = 1;
+  int current;
+  
+  printf("Enter the number of fibonacci numbers required\n");
+  
+  scanf("%d", &n);
+  printf("%d\n",a);
+  printf("%d\n",b);
+  
+  for( count = 3; count<=n;count++)
+  {
+        current = a+b;
+        printf("%d\n",current);
+        a= b;
+        b = current;
+   }
+   
+return 0;
+}
+        
+     
+  
+  
