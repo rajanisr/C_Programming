@@ -1,0 +1,57 @@
+/* C program to find the sum of all the digits in a number*/
+
+#include <stdio.h>
+int adddigits(int x);
+
+int main()
+{
+   int sum =0;
+   int c   =0;
+   int t   =0;
+   int num;
+   char n[1000];
+   
+   printf("Enter an integer\n");
+   scanf("%d", &num);
+   
+   printf("Calculating using modulus operator\n");
+   
+   while (num != 0)
+   {
+      sum+= num%10;
+      num = num/10;
+   }
+   printf("Sum of digits = %d\n", sum);
+   
+   printf("Calculating without using modulus operator\n");
+   printf("Enter an integer\n");
+   scanf("%s", n); 
+   
+   sum = 0;
+   for(c =0; n[c] != '\0';c++)
+   {  t = n[c] - '0';
+      sum+=t;
+      }
+      
+   printf("Sum of digits = %d\n", sum);
+   
+   printf("Calculating using recurrsion and modulus operator\n");
+   printf("Enter an integer\n");
+   scanf("%d", &num); 
+   sum=0;
+   sum = adddigits(num);
+   printf("Sum of digits = %d\n", sum);
+   }
+   
+   int adddigits(int x)
+   {
+       int static sum;
+       if(x == 0)
+         return 0;
+       sum = x%10 + adddigits(x/10);
+       return sum;
+    }
+   
+    
+    
+   
