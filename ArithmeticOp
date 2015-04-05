@@ -1,0 +1,54 @@
+// C Program to illustrate basic arithmetic operations on integers
+
+#include <stdio.h>
+
+void Operate(int ,int, int choice);
+
+int main()
+{
+   int num1, num2, choice;
+   
+   printf("Basic arithmetic operations:\n");
+   printf("Enter your option amongst the ones mentioned below\n");
+   
+   printf("[1] ADD\n");
+   printf("[2] SUBTRACT\n");
+   printf("[3] MULTIPLY\n");
+   printf("[4] DIVIDE\n");
+   
+   scanf("%d", &choice);
+   printf("Enter two integers:\n");
+   scanf("%d", &num1);
+   scanf("%d", &num2);
+   
+   Operate(num1,num2,choice);
+   return 0;
+   }
+   
+   void Operate(int x ,int y ,int choice)
+   {
+        switch (choice)
+        {
+          case 1 :
+              printf(" %d + %d = %d\n", x,y, x+y);
+              break;
+              
+          case 2 :
+              printf(" %d - %d = %d\n", x,y, x-y);
+              break;
+          
+          case 3 :
+              printf(" %d * %d = %d\n", x,y, x*y);
+              break;    
+              
+          case 4 :
+              printf(" %d / %d = %d\n", x,y, (float)x/y);
+              break;
+          
+          default:
+              printf(" Invalid Option selected\n");
+         }
+   }   
+   
+          
+   
