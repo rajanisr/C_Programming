@@ -1,0 +1,56 @@
+/* C program to print different patterns*/
+
+#include <stdio.h>
+
+int main()
+{
+
+   int row, n,c, temp;
+   printf("Printing pyramid pattern\n");
+   
+   printf("Enter the number of rows in the pyramid\n");
+   scanf("%d",&n);
+   temp=n;
+   for(row =1;row <=n;row++)
+   {
+      for(c =1 ; c<temp;c++)
+          printf(" ");
+      temp--;
+      for(c=1; c < = 2*row -1;c++)
+         printf("*");
+      printf("\n");
+      }
+      
+      printf("Printing Left aligned pattern\n");
+      
+      printf("Enter the number of rows in the pattern\n");
+      scanf("%d",&n);
+      temp = n;
+      for(row =1; row<=n; row++)
+      {
+         for (c = 1; c <= row ; c++)
+            printf("*");
+          printf("\n");
+      }
+      
+      printf("Printing Right aligned pattern\n");
+      
+      printf("Enter the number of rows in the pattern\n");
+      scanf("%d",&n);
+      temp = n;
+      for(row =1; row<=n; row++)
+      {
+         for (c = 1; c <= n-row ; c++)
+            printf(" ");
+         for (c = 1; c <= row ; c++)
+            printf("*");
+             
+            printf("\n");
+      }
+    
+      return 0;
+      }
+      
+      
+   
+   
