@@ -1,0 +1,60 @@
+/* C program to check if the entered integer is Odd or Even.
+   Implements the algorithm using modulus operator, bitwise operator
+   and without using either of them.*/
+   
+   #include <stdio.h>
+   
+   void usingmod(int);
+   void usingbitwise(int);
+   void withoutmodbitwise(int);
+   void usingcondiop(int *);
+   
+   int main()
+   {
+      int num;
+      printf("Enter an integer:\n");
+      scanf("%d",&num);
+      
+      usingmod(num);
+      usingbitwise(num);
+      withoutmodbitwise(num);
+      usingcondiop(&num);
+      
+      return 0;
+     }
+     
+   void usingmod(int x)
+   { 
+       if (x % 2 == 0)
+          printf("Even\n");
+       else
+          printf("Odd\n");
+          
+   }
+   
+   void usingbitwise(int x)
+   {
+      int mask =1;
+      if ( x & mask )
+          printf("Odd\n");
+       else
+          printf("Even\n");
+   }
+   
+   void withoutmodbitwise(int x)
+   {
+         if ( (x/2)*2 == x)
+          printf("Even\n");
+       else
+          printf("Odd\n");
+   }
+   
+   void usingcondiop(int * x)
+   {
+       (*x % 2 ==0)? printf("Even\n"):printf("Odd\n");     
+   }
+      
+      
+      
+   
+   
