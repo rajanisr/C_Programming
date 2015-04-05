@@ -1,0 +1,59 @@
+/* C program to check if a number is an armstrong number */
+
+#include  <stdio.h>
+
+#define MAX 100
+
+int main()
+{ 
+   int n[MAX],num,nd,i,j,t;
+   int sum =0;
+   int prod =1;
+   
+   
+   printf("Enter an integer:\n");
+   scanf("%d",&num);
+   t = num;
+   for(nd = 0; nd < MAX && num !=0; nd++)
+   {   
+       n[nd] = num%10;
+       num    = num/10;
+       
+    }
+    //nd++;
+    if( t==0)
+    {
+     printf("The number of digits in the number is : %d\n",nd+1);
+    }
+    else
+    { 
+        printf("The number of digits in the number is : %d\n",nd);
+    }
+      
+
+    for ( i =0 ; i < nd ;i++)
+    {
+       prod =1;
+       for( j =1; j<=nd;j++)
+       {
+         prod *= n[i];
+         }
+        sum = sum + prod;
+    }
+    
+    if(sum == t|| t == 0)
+    {
+      printf("The number %d is an Armstrong number \n", t);
+    }
+    
+    else
+    {
+         printf("The number %d is not an Armstrong number \n", t);
+    }
+         return 0;
+         
+}
+   
+   
+   
+   
