@@ -1,0 +1,52 @@
+/* C program to find first N prime numbers */
+
+#include <stdio.h>
+
+int main()
+{ 
+   int n,c,t,flag,i;
+   printf("Enter the number of prime numbers required:\n");
+   scanf("%d", &n);
+   
+   if(n>=1)
+   {
+     printf("First %d prime numbers are: \n",n);
+     printf("2\n");
+    
+     t = 2;
+    
+     for(c =2;c<=n;c++)
+     { 
+        flag =0;
+
+         while(!flag)
+         { 
+           t++;
+           for( i = 2; i < t; i++)
+            {
+                 if( t% i == 0)
+                    { 
+                      flag =1;
+                      break;
+                    } 
+             }
+             
+            if(flag ==0)
+             {
+                printf("%d\n",t);
+                flag =1;
+              } 
+            else
+                flag =0;
+           }
+       }
+     }
+     
+    else
+       printf("Enter a valid number\n");
+      return 0;
+}
+
+
+      
+   
