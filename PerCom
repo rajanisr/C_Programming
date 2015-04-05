@@ -1,0 +1,41 @@
+/* C program to find number of permutations and combinations */
+
+#include <stdio.h>
+
+int factorial (int);
+int permutations (int, int );
+int combinations(int, int);
+
+int main()
+{
+   int n,r;
+   long npr,ncr;
+   
+   printf("Enter the number of objects\n");
+   scanf("%d",&n);
+   printf("Enter the number of objects to be taken at once\n");
+   scanf("%d",&r);
+   printf("The number of permutations : %d\n",permutations(n,r));
+   printf("The number of combinations : %d\n",combinations(n,r));
+   return 0;
+   }
+   
+   
+int factorial(int x)
+{    int fact =x;
+     if(x == 0 || x==1)
+     return 1;
+     return fact*= factorial(x-1);
+}
+
+int permutations(int n, int r)
+{
+      return( factorial(n)/factorial(n-r));    
+
+}
+
+int combinations(int n, int r)
+{
+      return( factorial(n)/(factorial(n-r)*factorial(r)));    
+
+}
