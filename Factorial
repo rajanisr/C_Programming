@@ -1,0 +1,52 @@
+/* C program to find factorial of a number*/
+
+#include <stdio.h>
+
+int factorialrecur(int n);
+int factorialwr(int n);
+
+int main()
+{
+  int fact=1;
+  int i,num =0;
+  
+  printf("Enter an integer\n");
+  scanf("%d", &num);
+  printf("Calculating factorial using for loop in main:\n");
+  
+  for(i=num; i != 0;i--)
+       fact = fact*i;
+  printf(" %d! is:%d\n",num,fact);
+  
+  printf("Calculating factorial using recursion:\n");
+  
+  printf(" %d! is:%d\n",num,factorialrecur(num));
+  
+  printf("Calculating factorial using function without recursion:\n");
+  
+  printf(" %d! is:%d\n",num,factorialwr(num));
+  return 0;
+  }
+  
+  int factorialrecur(int n)
+  {    int fact =1;
+  
+       if (n==0 || n==1)
+       return 1;
+       
+       fact = n * factorialrecur(n-1);
+       return fact;
+  
+  }
+  
+  int factorialwr(int n)
+  {
+      int fact =1;
+      for(; n != 0;n--)
+          fact = fact * n;
+      return fact;
+    
+  }
+  
+  
+  
