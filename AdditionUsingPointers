@@ -1,0 +1,30 @@
+/* C program illustrating basic use of pointers */
+
+#include <stdio.h>
+
+int * sum(int*, int*);
+
+int main()
+{
+    int a ,b;
+    int*p,*q;
+    
+    printf("Enter two integers\n");
+    scanf("%d %d",&a,&b);
+    
+    p = &a;
+    q = &b;
+    
+    printf("Sum of %d and %d using pointers %d\n", a, b, (*p+*q));
+    
+    printf("Sum of %d and %d using function call by reference is %d\n", a,b, sum(&a,&b));
+    
+    return 0;
+    }
+    
+    int sum( int *x,int *y)
+    {
+        return (*x+*y);
+      
+    }
+    
