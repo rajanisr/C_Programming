@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+#define MAX 5
+int main()
+{
+   int arr[MAX] = { 2,5,1,0,9};
+   int temp;
+   int i, j;
+   int key;
+   int low;
+   int high;
+   int mid;
+   for(i =0 ; i< MAX; i++)
+   {
+      for( j=i+1;j<MAX;j++)
+       {
+           if( arr[i] >arr[j])
+            { 
+               temp = arr[i];
+               arr[i] = arr[j];
+               arr[j]= temp;
+             }
+
+         }
+    }
+    printf("Sorted array: ");
+    for (i=0;i<MAX;i++)
+      printf("%d  ", arr[i]);
+      printf("\n");
+
+   printf("enter the key to search\n");
+   scanf("%d",&key);
+   
+   low  = 0;
+   high = MAX-1;
+   mid  = (low+high)/2;
+  
+ //  if ( arr[mid] ==key)
+
+   while(high >=low)
+   {
+       if( arr[mid] > key)
+        {
+           high  = mid -1;
+         }
+        if( arr[mid]< key)
+       {
+         low = mid+1;
+       }
+    
+       mid  = (low+high)/2 ;   
+       if( arr[mid] == key)
+          {
+            printf("Key : %d is at the position %d\n",key,mid);  
+            break;
+          }
+       
+  }
+  
+   if( low > high)
+   printf("Key %d is not found in the array\n",key);
+  
+return 0;
+}
