@@ -1,0 +1,35 @@
+/* C program to search for an element in the array
+   Using Linear Search.
+   Time complexity is O(n) n being the numbe rof elements in the array */
+   
+   #include <stdio.h>
+   
+   #define MAX 10
+   
+   int main()
+   {
+       int arr[MAX] = {10, 20,30,40,50,60,70,80,90,100};
+       int key,i,flag=0;
+       
+       printf(" Enter a number to be searched in the array\n");
+       
+       scanf("%d", &key);
+       
+       for (i =0; i< MAX;i++)
+       {
+          if ( key == *(arr+i))
+           {
+              flag =1;
+              printf(" Key : %d found at the position %d in the array \n", key , i);
+              break;
+           }
+       }
+          
+          if(!flag)
+          printf("Key: %d is not found in the array\n",key);
+          
+          return 0;
+  }
+       
+       
+       
