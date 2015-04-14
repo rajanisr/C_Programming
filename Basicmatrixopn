@@ -1,0 +1,113 @@
+#include <stdio.h>
+
+#define MAX 3
+
+void create(int* arr, int row, int col);
+void display(int *arr, int row,int col);
+int * matadd(int *arr1, int *arr2, int *arr3, int row,int col);
+int * matmul(int *arr1, int *arr2, int row1,int row2, int col1,int col2);
+
+
+int main()
+{
+  int row1=MAX;
+  int row2=MAX;
+  int row3=MAX;
+  int col1=MAX;
+  int col2=MAX;
+  int col3=MAX;
+  
+  int a[row1][col1];
+  int b[row2][col2];
+  int c[row3][col3];
+  
+  printf("Creating matrix1:\n");
+  create(a,row1,col1);
+  display(a,row1,col1);
+  
+  printf("Creating matrix2:\n");
+  create(b,row2,col2);
+  display(b,row2,col2);
+  
+  printf("Adding two matrices\n");
+  c = matadd(a,b,MAX,MAX);
+  display(c,MAX,MAX);
+  
+  if( col1 != row2)
+  {
+      printf("matrices cannot be multiplied\n");
+  }
+  
+  else
+  {
+       printf("multiplying two matrices\n");
+       c=matmul(a,b,row1,row2,col1,col2);
+       display(c,row3,col3);
+  }
+  
+  retutn 0;
+
+}
+
+void create(int* arr, int row, int col)
+{   int i,j;
+    for(i=0; i<row; i++)
+  {
+       for (j=0; j<col;j++)
+       {
+         printf("Enter the element [%d][%d]:\n",i,j);
+         scanf("%d",(arr+i+j));
+       }
+  }     
+}
+
+void display(int *arr, int row,int col)
+{
+    int i,j;
+    for(i=0; i<row; i++)
+  {
+       for (j=0; j<col;j++)
+       {
+         printf("[%d][%d]: %d\n",i,j,*(arr+i+j));
+        
+       }
+  }     
+
+}
+
+int * matadd(int *arr1, int *arr2, int * arr3,int row,int col)
+{
+    
+    int i,j;
+    for(i=0; i<row; i++)
+  {
+       for (j=0; j<col;j++)
+       {
+         *(arr3+i+j) = *(arr1+i+j)+*(arr2+i+j);
+        
+       }
+  }     
+
+   return  arr3;
+}
+
+int * matmul(int *arr1, int *arr2,int *arr3, int row1,int row2, int col1,int col2);
+{
+     int i,j,k;
+     
+     for(i = 0; i<row1;i++)
+     {
+        for(j=0;j<col2 ;j++)
+        {
+           for(k=0; k<col1;k++)
+           {
+              *(arr3+i+j) = (*(arr1+i+k)*(*(arr2+k+j));
+              }
+            }
+            
+        }
+        return arr3;
+      }
+
+
+
